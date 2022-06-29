@@ -2,19 +2,25 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
-    console.log("buttons")
+    
     for(let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "rock") {
-                alert("You clicked Rock");
-            } else {
-                alert(`You clicked $(data-type)!`);
+                console.log("You clicked Rock!");
+            } else if (this.getAttribute("data-type") === "paper") {
+                console.log("You clicked Paper!");
+            } else if (this.getAttribute("data-type") === "scissors") {
+                console.log("You clicked Scissors!");
             }
         })
-    }
+    };
 })
 
+/**
+ * The computer guess
+ */
 function runGame() {
+    let num1 = Math.floor(Math.random() * 3);
 
 }
 

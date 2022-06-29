@@ -33,11 +33,25 @@ body {
 .btn:hover { 
     background-color: yellow;
     color: red;
-    transform: 1.1;
+    transform: scale(1.1);
 }
 
 h2 {
     font-size: 2rem;
     text-align: center;
     letter-spacing: 2px;
+}
+
+.results-column { 
+    width: 33%;
+    float: left;
+    text: center;
+    font-size: 2rem;
+}
+
+.games-score {
+    width: 50%;
+    float: left;
+    text: center;
+    font-size: 1.5rem;
 }
