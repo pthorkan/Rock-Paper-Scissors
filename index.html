@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+    <!--Font Awesome Link-->
+    <script src="https://kit.fontawesome.com/760d0e5837.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="assets/CSS/style.css">
     <title>Document</title>
@@ -17,7 +19,25 @@
         <img class="logo" src="assets/Images/rock-paper-scissors.png" alt="Rock Paper Scissors Game Logo"> Rock Paper Scissors
     </h1>
 
-    <div class="game-area"></div>
+    <div class="game-area">
+        <div class="hand-options">
+            <button class="btn">
+                <i class="fa-regular fa-hand-back-fist"></i>
+            </button>
+            <button class="btn">
+                <i class="fa-regular fa-hand"></i>
+            </button>
+            <button class="btn">
+                <i class="fa-regular fa-hand-scissors"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="results-area">
+        <h2>First to 5 wins!!</h2>
+        <span>Player</span>
+        <span>Computer</span>
+    </div>
 
     <div class="score-area">
         <p class="games-won">Games Won <span id="won">0</span></p>
