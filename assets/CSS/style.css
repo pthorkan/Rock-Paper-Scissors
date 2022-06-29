@@ -1,3 +1,43 @@
 body {
     background-color: aqua;
+    font-family: 'League Gothic', sans-serif;
+    text-align: center;
+}
+
+.logo {
+    height: 250px;
+    margin-top: 25px;
+}
+
+.heading {
+    font-size: 4rem;
+    text-align: center;
+    letter-spacing: 4px;
+    margin: 25px;
+}
+
+.game-area {
+    height: 125px;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 15px;
+    margin: 0 25px;
+    transition-duration: .5s;
+    font-size: 100px;
+    height: 130px;
+    width: 130px;
+}
+
+.btn:hover { 
+    background-color: yellow;
+    color: red;
+    transform: 1.1;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 2px;
 }
