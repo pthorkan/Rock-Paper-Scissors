@@ -1,30 +1,46 @@
+const variables = ["rock", "paper", "scissors"];
+
 // Waits for DOM to finish loading before running the game
 
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
-    
+
     for(let button of buttons) {
         button.addEventListener("click", function() {
-            if (this.getAttribute("data-type") === "rock") {
-                console.log("You clicked Rock!");
-            } else if (this.getAttribute("data-type") === "paper") {
-                console.log("You clicked Paper!");
-            } else if (this.getAttribute("data-type") === "scissors") {
-                console.log("You clicked Scissors!");
+            userSelection = this.getAttribute("data-type");
+            document.getElementsByClassName("results-column").innerHTML = `${userSelection}`;
             }
-        })
-    };
+        )}
 })
+
+function userChoice(userSelection) {
+    console.log(userSelection)
+}
 
 /**
  * The computer guess
  */
+function randomChoice() {
+
+    const computerChoice = Math.floor(Math.random() * 3);
+    const computerSelection = variables[computerChoice];
+    console.log(computerSelection);
+}
+
+function computerChoice() {
+
+    computerAnswer = randomChoice();
+    document.getElementById("column1").innerText = "computerAnswer";
+}
+
 function runGame() {
-    let num1 = Math.floor(Math.random() * 3);
 
 }
 
 function checkAnswer() {
+    if(userSelection === computerSelection) {
+        alert("Its a draw");
+    }
 
 }
 
