@@ -34,19 +34,19 @@ function runGame() {
 function rockArray(computer1) {
     console.log(computer1);
     let array = ["paper", "rock", "scissors"];
-    if (computer1 =="paper" ? console.log("Computer Wins") : console.log("User Wins")); 
+    if (computer1 =="paper" ? (console.log("Computer Wins"), incrementWrongAnswer()) : (console.log("User Wins"), incrementScore())); 
 }
 
 function paperArray(computer1) {
     console.log(computer1);
     let array = ["scissors", "paper", "rock"];
-    if (computer1 =="scissors" ? console.log("Computer Wins") : console.log("User Wins")); 
+    if (computer1 =="scissors" ? (console.log("Computer Wins"), incrementWrongAnswer()) : (console.log("User Wins"), incrementScore())); 
 }
  
 function scissorsArray(computer1) {
     console.log(computer1);
     let array = ["rock", "scissors", "paper"];
-    if (computer1 =="rock" ? console.log("Computer Wins") : console.log("User Wins")); 
+    if (computer1 =="rock" ? (console.log("Computer Wins"), incrementWrongAnswer()) : (console.log("User Wins"), incrementScore())); 
 }
 
 /**
@@ -61,8 +61,31 @@ function randomChoice() {
 
 function incrementScore() {
 
+    let prevScore = parseInt(document.getElementById("games-won").innerText);
+    let newScore = ++prevScore
+    document.getElementById("games-won").innerText = newScore;
+
+    if (newScore == 5) {
+        alert("Whooop...you won!!");
+        resetScore();
+    }
+
+
 }
 
 function incrementWrongAnswer() {
 
+    let prevScore = parseInt(document.getElementById("games-lost").innerText);
+    let newScore = ++prevScore
+    document.getElementById("games-lost").innerText = newScore;
+
+    if (newScore == 5) {
+        alert("Damn it!! Maybe next time!");
+        resetScore();
+    }
+}
+
+function resetScore() {
+    document.getElementById("games-lost").innerText = 0;
+    document.getElementById("games-won").innerText = 0;
 }
