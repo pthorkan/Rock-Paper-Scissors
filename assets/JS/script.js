@@ -1,20 +1,52 @@
-const variables = ["rock", "paper", "scissors"];
+let variables = ["rock", "paper", "scissors"];
 
 // Waits for DOM to finish loading before running the game
 
 document.addEventListener("DOMContentLoaded", function() {
+    runGame(Event);
+    }
+);
+        
+function runGame() {
     let buttons = document.getElementsByTagName("button");
 
     for(let button of buttons) {
         button.addEventListener("click", function() {
-            userSelection = this.getAttribute("data-type");
-            document.getElementsByClassName("results-column").innerHTML = `${userSelection}`;
-            }
-        )}
-})
+        let user1 = this.getAttribute("data-type");
+        console.log(user1);
+        let computer1 = randomChoice();
+        console.log(computer1);
+        
+        if (user1 == computer1) {
+            console.log("Tie")
+        } else if (user1 == "rock") {
+            rockArray(computer1);
+        } else if (user1 == "paper") {
+            paperArray(computer1);
+        } else {
+            scissorsArray(computer1);
+        } 
+        })
+        }
+    }
 
-function userChoice(userSelection) {
-    console.log(userSelection)
+
+function rockArray(computer1) {
+    console.log(computer1);
+    let array = ["paper", "rock", "scissors"];
+    if (computer1 =="paper" ? console.log("Computer Wins") : console.log("User Wins")); 
+}
+
+function paperArray(computer1) {
+    console.log(computer1);
+    let array = ["scissors", "paper", "rock"];
+    if (computer1 =="scissors" ? console.log("Computer Wins") : console.log("User Wins")); 
+}
+ 
+function scissorsArray(computer1) {
+    console.log(computer1);
+    let array = ["rock", "scissors", "paper"];
+    if (computer1 =="rock" ? console.log("Computer Wins") : console.log("User Wins")); 
 }
 
 /**
@@ -24,24 +56,7 @@ function randomChoice() {
 
     const computerChoice = Math.floor(Math.random() * 3);
     const computerSelection = variables[computerChoice];
-    console.log(computerSelection);
-}
-
-function computerChoice() {
-
-    computerAnswer = randomChoice();
-    document.getElementById("column1").innerText = "computerAnswer";
-}
-
-function runGame() {
-
-}
-
-function checkAnswer() {
-    if(userSelection === computerSelection) {
-        alert("Its a draw");
-    }
-
+    return computerSelection;
 }
 
 function incrementScore() {
