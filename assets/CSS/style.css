@@ -68,3 +68,7 @@ h2 {
     padding-left: 1rem;
     ;
 }
+
+.selection iframe {
+    font-size: 100px;
+}
