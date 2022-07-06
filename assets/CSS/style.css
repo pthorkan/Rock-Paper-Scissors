@@ -42,18 +42,32 @@ h2 {
     letter-spacing: 2px;
 }
 
+#columnHead {
+    width: 33%;
+    float: left;
+    text-align: center;
+    font-size: 2rem;
+}
+
 .results-column { 
     width: 33%;
     float: left;
-    text: center;
+    text-align: center;
     font-size: 2rem;
     height: auto;
     padding-bottom: 50px;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .column1 {
     text: center;
     font-size: 2rem;
+}
+
+#column1a {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .games-score {
