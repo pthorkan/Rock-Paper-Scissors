@@ -70,6 +70,10 @@ h2 {
     ;
 }
 
-.selection iframe {
-    font-size: 100px;
+div.selection {
+    font-size: 4rem;
+}
+
+.games-score {
+    margin-bottom: 25px;
 }
