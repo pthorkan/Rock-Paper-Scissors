@@ -65,18 +65,6 @@ h2 {
     font-size: 2rem;
 }
 
-#column1a {
-    display: flex;
-    flex-direction: column-reverse;
-}
-
-.games-score {
-    width: 50%;
-    float: left;
-    text: center;
-    font-size: 1.5rem;
-}
-
 .games-won,
 .games-lost {
     color: red;
@@ -88,6 +76,16 @@ div.selection {
     font-size: 4rem;
 }
 
-.games-score {
-    margin-bottom: 25px;
+div.winner {
+    color: red;
+    animation-name: winner-zoom;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+        @keyframes winner-zoom {
+            from {
+            transform: scale(1);
+            } to {
+            transform: scale(1.1);
+            }
+    }
 }

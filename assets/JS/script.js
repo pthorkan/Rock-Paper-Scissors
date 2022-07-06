@@ -1,4 +1,4 @@
-let variables = ["rock", "paper", "scissors"];
+const variables = ["rock", "paper", "scissors"];
 
 // Waits for DOM to finish loading before running the game
 
@@ -32,11 +32,14 @@ function runGame() {
         }
     }
 
-
 function rockArray(computer) {
     console.log(computer);
     appendSelection(computer);
-    if (computer === "paper" ? (console.log("Computer Wins"), incrementWrongAnswer()) : (console.log("User Wins"), incrementScore())); 
+    if (computer === "paper" ? (console.log("Computer Wins"), incrementWrongAnswer(), document.getElementsByTagName) : (console.log("User Wins"), incrementScore())); 
+}
+
+function addColor() {
+    document.getElement
 }
 
 function paperArray(computer) {
@@ -67,6 +70,9 @@ function incrementScore() {
     const newScore = prevScore + 1;
     document.getElementById("games-won").innerText = newScore;
 
+    let winner = document.getElementById("column1").lastChild
+    winner.classList.add("winner");
+
     if (newScore == 5) {
         alert("Whooop...you won!!");
         resetScore();
@@ -79,6 +85,9 @@ function incrementWrongAnswer() {
     const newScore = prevScore + 1;
     document.getElementById("games-lost").innerText = newScore;
 
+    let winner = document.getElementById("column3").lastChild
+    winner.classList.add("winner");
+    
     if (newScore == 5) {
         alert("Damn it!! Maybe next time!");
         resetScore();
@@ -101,7 +110,7 @@ function removeElementsByClass() {
 }
 
 
-function appendSelection (computer) {
+function appendSelection(computer) {
     let div = document.createElement('div');
     if (computer === "paper") {
         div.innerHTML = '<i class="fa-regular fa-hand"></i>';
@@ -125,5 +134,4 @@ function appendUserSelection (user) {
     };
     div.classList.add("selection");
     document.getElementById("column1").appendChild(div);
-    div.scrollIntoView({behavior: "smooth"});
 }
