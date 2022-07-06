@@ -88,7 +88,18 @@ function incrementWrongAnswer() {
 function resetScore() {
     document.getElementById("games-lost").innerText = 0;
     document.getElementById("games-won").innerText = 0;
+    
+    removeElementsByClass()
+    
 }
+
+function removeElementsByClass() {
+    var elements = document.getElementsByClassName('selection');
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+}
+
 
 function appendSelection (computer1) {
     let div = document.createElement('div');
@@ -103,7 +114,7 @@ function appendSelection (computer1) {
     document.getElementById("column3").appendChild(div);
 }
 
-function appendUserSelection(user1) {
+function appendUserSelection (user1) {
     let div = document.createElement('div');
     if (user1 == "paper") {
         div.innerHTML = '<i class="fa-regular fa-hand"></i>';
@@ -114,4 +125,5 @@ function appendUserSelection(user1) {
     };
     div.classList.add("selection");
     document.getElementById("column1").appendChild(div);
+    div.scrollIntoView({behavior: "smooth"});
 }
