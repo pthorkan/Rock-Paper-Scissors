@@ -78,14 +78,23 @@ div.selection {
 
 div.winner {
     color: red;
-    animation-name: winner-zoom;
+    animation-name: winner;
+    animation-duration: 2s;
+}
+
+@keyframes winner{
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+}
+
+.selection .winner {
+    animation-name: winner;
     animation-duration: 5s;
-    animation-fill-mode: forwards;
-        @keyframes winner-zoom {
-            from {
-            transform: scale(1);
+    
+    @keyframes winner{
+        from {transform: scale(1);
             } to {
-            transform: scale(1.1);
-            }
-    }
+            transform: scale(1.5);}
+    };
 }

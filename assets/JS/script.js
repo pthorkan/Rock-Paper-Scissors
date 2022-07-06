@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
     runGame();
     }
 );
+
+function oneClick() {
+    window.scrollBy(0, 100);
+}
         
 function runGame() {
     let buttons = document.getElementsByTagName("button");
@@ -17,6 +21,7 @@ function runGame() {
         appendUserSelection(user);
         let computer = randomChoice();
         console.log(computer);
+        oneClick();
         
         if (user === computer) {
             console.log("Tie");
