@@ -8,7 +8,11 @@ document.addEventListener("DOMContentLoaded", function() {
 );
 
 function oneClick() {
-    window.scrollBy(0, 100);
+    if (window.pageYOffset >= 300) {
+        return;
+    } else {
+        window.scrollBy(0, 100);
+    };
 }
         
 function runGame() {
