@@ -47,10 +47,6 @@ function rockArray(computer) {
     if (computer === "paper" ? (console.log("Computer Wins"), incrementWrongAnswer(), document.getElementsByTagName) : (console.log("User Wins"), incrementScore())); 
 }
 
-function addColor() {
-    document.getElement
-}
-
 function paperArray(computer) {
     console.log(computer);
     appendSelection(computer);
@@ -83,8 +79,9 @@ function incrementScore() {
     winner.classList.add("winner");
 
     if (newScore == 5) {
-        alert("Whooop...you won!!");
-        resetScore();
+        console.log('Player first to 5!');
+        document.getElementsByClassName("playerWin").innerHTML = "Winner!!";
+        setTimeout(resetScore, 3000);
     };
 }
 
@@ -98,8 +95,9 @@ function incrementWrongAnswer() {
     winner.classList.add("winner");
     
     if (newScore == 5) {
-        alert("Damn it!! Maybe next time!");
-        resetScore();
+        console.log('Computer first to 5!');
+        document.getElementsByClassName("computerWin").innerHTML = "Winner!!";
+        setTimeout(resetScore, 3000);
     }
 }
 
@@ -132,7 +130,7 @@ function appendSelection(computer) {
     document.getElementById("column3").appendChild(div);
 }
 
-function appendUserSelection (user) {
+function appendUserSelection(user) {
     let div = document.createElement('div');
     if (user === "paper") {
         div.innerHTML = '<i class="fa-regular fa-hand"></i>';
