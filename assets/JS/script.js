@@ -2,11 +2,6 @@ const variables = ["rock", "paper", "scissors"];
 
 // Waits for DOM to finish loading before running the game
 
-document.addEventListener("DOMContentLoaded", function() {
-    runGame();
-    }
-);
-
 function oneClick() {
     if (window.pageYOffset >= 300) {
         return;
@@ -44,7 +39,7 @@ function runGame() {
 function rockArray(computer) {
     console.log(computer);
     appendSelection(computer);
-    if (computer === "paper" ? (console.log("Computer Wins"), incrementWrongAnswer(), document.getElementsByTagName) : (console.log("User Wins"), incrementScore())); 
+    if (computer === "paper" ? (console.log("Computer Wins"), incrementWrongAnswer()) : (console.log("User Wins"), incrementScore())); 
 }
 
 function paperArray(computer) {
@@ -78,6 +73,11 @@ function incrementScore() {
     let winner = document.getElementById("column1").lastChild
     winner.classList.add("winner");
 
+    let div = document.createElement('div');
+    div.innerHTML = 'Win!';
+    div.classList.add("heading");
+    document.getElementById("column2").appendChild(div);
+
     if (newScore == 5) {
         console.log('Player first to 5!');
         document.getElementsByClassName("playerWin").innerHTML = "Winner!!";
@@ -93,6 +93,11 @@ function incrementWrongAnswer() {
 
     let winner = document.getElementById("column3").lastChild
     winner.classList.add("winner");
+
+    let div = document.createElement('div');
+    div.innerText = 'Lose';
+    div.classList.add("winner");
+    document.getElementById("column2").appendChild(div);
     
     if (newScore == 5) {
         console.log('Computer first to 5!');
