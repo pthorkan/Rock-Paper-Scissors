@@ -1,6 +1,11 @@
 const variables = ["rock", "paper", "scissors"];
 
 // Waits for DOM to finish loading before running the game
+document.addEventListener("DOMContentLoaded", function() {
+    runGame();
+    }
+);
+
 
 function oneClick() {
     if (window.pageYOffset >= 300) {
@@ -25,13 +30,14 @@ function runGame() {
         if (user === computer) {
             console.log("Tie");
             appendSelection(computer);
+            tie();
         } else if (user === "rock") {
             rockArray(computer);
         } else if (user === "paper") {
             paperArray(computer);
         } else {
             scissorsArray(computer);
-        } 
+        }
         })
         }
     }
@@ -71,11 +77,14 @@ function incrementScore() {
     document.getElementById("games-won").innerText = newScore;
 
     let winner = document.getElementById("column1").lastChild
-    winner.classList.add("winner");
+    winner.classList.add("userWin", "selection");
+
+    let loser = document.getElementById("column3").lastChild
+    loser.classList.add("computerLoss", "selection");
 
     let div = document.createElement('div');
     div.innerHTML = 'Win!';
-    div.classList.add("heading");
+    div.classList.add("userWin", "selection");
     document.getElementById("column2").appendChild(div);
 
     if (newScore == 5) {
@@ -92,11 +101,14 @@ function incrementWrongAnswer() {
     document.getElementById("games-lost").innerText = newScore;
 
     let winner = document.getElementById("column3").lastChild
-    winner.classList.add("winner");
+    winner.classList.add("computerWin", "selection");
+
+    let loser = document.getElementById("column1").lastChild
+    loser.classList.add("userLoss", "selection");
 
     let div = document.createElement('div');
-    div.innerText = 'Lose';
-    div.classList.add("winner");
+    div.innerText = 'Damnnnn!';
+    div.classList.add("loser", "selection");
     document.getElementById("column2").appendChild(div);
     
     if (newScore == 5) {
@@ -104,6 +116,19 @@ function incrementWrongAnswer() {
         document.getElementsByClassName("computerWin").innerHTML = "Winner!!";
         setTimeout(resetScore, 3000);
     }
+}
+
+function tie() {
+    let div = document.createElement('div');
+    div.innerText = 'Tie!';
+    div.classList.add("tie", "selection");
+    document.getElementById("column2").appendChild(div);
+
+    let userTie = document.getElementById("column1").lastChild
+    userTie.classList.add("tie", "selection");
+
+    let computerTie = document.getElementById("column3").lastChild
+    computerTie.classList.add("tie", "selection");
 }
 
 function resetScore() {
@@ -115,12 +140,11 @@ function resetScore() {
 }
 
 function removeElementsByClass() {
-    var elements = document.getElementsByClassName('selection');
+    let elements = document.getElementsByClassName("selection");
     while(elements.length > 0){
         elements[0].parentNode.removeChild(elements[0]);
     }
 }
-
 
 function appendSelection(computer) {
     let div = document.createElement('div');
@@ -131,7 +155,7 @@ function appendSelection(computer) {
     } else if (computer === "scissors") {
         div.innerHTML = '<i class="fa-regular fa-hand-scissors"></i>';
     };
-    div.classList.add("selection");
+
     document.getElementById("column3").appendChild(div);
 }
 
@@ -144,6 +168,6 @@ function appendUserSelection(user) {
     } else if (user === "scissors") {
         div.innerHTML = '<i class="fa-regular fa-hand-scissors"></i>';
     };
-    div.classList.add("selection");
+
     document.getElementById("column1").appendChild(div);
-}
+    };

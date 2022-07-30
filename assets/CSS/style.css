@@ -72,14 +72,17 @@ h2 {
     ;
 }
 
-div.selection {
+div.userLoss, div.computerLoss {
+    opacity: 0.5;
     font-size: 4rem;
 }
 
-div.winner {
-    color: red;
+.computerWin {
+    color: black;
     animation-name: winner;
     animation-duration: 2s;
+    font-size: 4rem;
+
 }
 
 @keyframes winner{
@@ -88,13 +91,41 @@ div.winner {
     100% {transform: scale(1);}
 }
 
-.selection .winner {
+.userWin {
+    color: red;
     animation-name: winner;
-    animation-duration: 5s;
-    
-    @keyframes winner{
-        from {transform: scale(1);
-            } to {
-            transform: scale(1.5);}
-    };
+    animation-duration: 2s;
+    font-size: 4rem;
 }
+
+@keyframes winner{
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+}
+
+div.loser {
+    animation-name: loser;
+    animation-duration: 2s;
+    font-size: 4rem;
+    opacity: 0.5;
+}
+
+@keyframes loser{
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+    
+}
+
+.tie {
+    animation-name: tie;
+    animation-duration: 2s;
+    font-size: 3rem;
+}
+    
+@keyframes tie{
+        0% {transform: scale(1);}
+        50% {transform: scale(1.5);}
+        100% {transform: scale(1);}
+};
