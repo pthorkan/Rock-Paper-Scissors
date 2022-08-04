@@ -87,10 +87,8 @@ function incrementScore() {
     div.classList.add("userWin", "selection");
     document.getElementById("column2").appendChild(div);
 
-    if (newScore == 5) {
-        console.log('Player first to 5!');
-        document.getElementsByClassName("playerWin").innerHTML = "Winner!!";
-        setTimeout(resetScore, 3000);
+    if (newScore === 5) {
+        userChampion();
     };
 }
 
@@ -111,11 +109,10 @@ function incrementWrongAnswer() {
     div.classList.add("loser", "selection");
     document.getElementById("column2").appendChild(div);
     
-    if (newScore == 5) {
-        console.log('Computer first to 5!');
-        document.getElementsByClassName("computerWin").innerHTML = "Winner!!";
-        setTimeout(resetScore, 3000);
+    if (newScore === 5) {
+        computerChampion();
     }
+
 }
 
 function tie() {
@@ -131,12 +128,35 @@ function tie() {
     computerTie.classList.add("tie", "selection");
 }
 
+function userChampion() {
+
+    removeElementsByClass();
+
+    let champion = document.createElement('div');
+    champion.innerHTML = '<i class="fa-solid fa-trophy"></i>';
+    champion.classList.add("champion");
+    document.getElementById("column1").appendChild(champion);
+
+    setTimeout(resetScore, 3000);
+}
+
+function computerChampion() {
+
+    removeElementsByClass();
+
+    let champion = document.createElement('div');
+    champion.innerHTML = '<i class="fa-solid fa-trophy"></i>';
+    champion.classList.add("champion");
+    document.getElementById("column3").appendChild(champion);
+
+    setTimeout(resetScore, 3000);
+}
+
 function resetScore() {
+
     document.getElementById("games-lost").innerText = 0;
     document.getElementById("games-won").innerText = 0;
-    
-    removeElementsByClass()
-    
+
 }
 
 function removeElementsByClass() {
