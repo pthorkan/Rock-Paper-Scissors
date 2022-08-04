@@ -130,14 +130,13 @@ div.loser {
         100% {transform: scale(1);}
 };
 
-div.champion {
-    color: red;
+.champion {
+    font-size: 4rem;
     animation-name: champion;
     animation-duration: 2s;
-    font-size: 4rem;
-    }
+}
 
-    @keyframes champion {
+@keyframes champion{
     0% {transform: scale(1);}
     50% {transform: scale(1.5);}
     100% {transform: scale(1);}
