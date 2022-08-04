@@ -156,6 +156,9 @@ function resetScore() {
 
     document.getElementById("games-lost").innerText = 0;
     document.getElementById("games-won").innerText = 0;
+    
+    let elements = document.getElementsByClassName("champion");
+    elements[0].parentNode.removeChild(elements[0]);
 
 }
 

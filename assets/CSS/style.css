@@ -128,10 +128,12 @@ div.loser {
         0% {transform: scale(1);}
         50% {transform: scale(1.5);}
         100% {transform: scale(1);}
-};
+}
 
-.champion {
-    font-size: 4rem;
+div.champion {
+    padding-top: 50px;
+    color: red;
+    font-size: 16rem;
     animation-name: champion;
     animation-duration: 2s;
 }
@@ -140,4 +142,4 @@ div.loser {
     0% {transform: scale(1);}
     50% {transform: scale(1.5);}
     100% {transform: scale(1);}
-};
+}
