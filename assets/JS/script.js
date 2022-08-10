@@ -1,4 +1,4 @@
-const variables = ["rock", "paper", "scissors"];
+const variables = ["rock", "paper", "scissors", "lizard", "spock"];
 
 // Waits for DOM to finish loading before running the game
 document.addEventListener("DOMContentLoaded", function() {
@@ -35,8 +35,12 @@ function runGame() {
             rockArray(computer);
         } else if (user === "paper") {
             paperArray(computer);
-        } else {
+        } else if (user === "scissors") {
             scissorsArray(computer);
+        } else if (user === "lizard") {
+            lizardArray(computer);
+        } else {
+            spockArray(computer);
         }
         })
         }
@@ -45,19 +49,81 @@ function runGame() {
 function rockArray(computer) {
     console.log(computer);
     appendSelection(computer);
-    if (computer === "paper" ? (console.log("Computer Wins"), incrementWrongAnswer()) : (console.log("User Wins"), incrementScore())); 
+
+    if (computer === "paper") {
+        (console.log("Computer Wins"));
+        incrementWrongAnswer();
+     } else if (computer === "spock") {
+        (console.log("Computer Wins"));
+        incrementWrongAnswer();
+     } else {
+        (console.log("User Wins"));
+        incrementScore(); 
+    };
 }
 
 function paperArray(computer) {
     console.log(computer);
     appendSelection(computer);
-    if (computer === "scissors" ? (console.log("Computer Wins"), incrementWrongAnswer()) : (console.log("User Wins"), incrementScore())); 
+
+    if (computer === "scissors") {
+        (console.log("Computer Wins"));
+        incrementWrongAnswer();
+     } else if (computer === "lizard") {
+        (console.log("Computer Wins"));
+        incrementWrongAnswer();
+     } else {
+        (console.log("User Wins"));
+        incrementScore(); 
+    };
 }
- 
+
 function scissorsArray(computer) {
     console.log(computer);
     appendSelection(computer);
-    if (computer === "rock" ? (console.log("Computer Wins"), incrementWrongAnswer()) : (console.log("User Wins"), incrementScore())); 
+
+    if (computer === "rock") {
+        (console.log("Computer Wins"));
+        incrementWrongAnswer();
+     } else if (computer === "spock") {
+        (console.log("Computer Wins"));
+        incrementWrongAnswer();
+     } else {
+        (console.log("User Wins"));
+        incrementScore(); 
+    };
+}
+ 
+function spockArray(computer) {
+    console.log(computer);
+    appendSelection(computer);
+
+    if (computer === "paper") {
+        (console.log("Computer Wins"));
+        incrementWrongAnswer();
+     } else if (computer === "lizard") {
+        (console.log("Computer Wins"));
+        incrementWrongAnswer();
+     } else {
+        (console.log("User Wins"));
+        incrementScore(); 
+    };
+}
+
+function lizardArray(computer) {
+    console.log(computer);
+    appendSelection(computer);
+
+    if (computer === "paper") {
+        (console.log("Computer Wins"));
+        incrementWrongAnswer();
+     } else if (computer === "lizard") {
+        (console.log("Computer Wins"));
+        incrementWrongAnswer();
+     } else {
+        (console.log("User Wins"));
+        incrementScore(); 
+    };
 }
 
 /**
@@ -65,7 +131,7 @@ function scissorsArray(computer) {
  */
 function randomChoice() {
 
-    const computerChoice = Math.floor(Math.random() * 3);
+    const computerChoice = Math.floor(Math.random() * 5);
     const computerSelection = variables[computerChoice];
     return computerSelection;
 }
@@ -177,6 +243,10 @@ function appendSelection(computer) {
         div.innerHTML = '<i class="fa-regular fa-hand-back-fist"></i>';
     } else if (computer === "scissors") {
         div.innerHTML = '<i class="fa-regular fa-hand-scissors"></i>';
+    } else if (computer === "lizard") {
+        div.innerHTML = '<i class="fa-solid fa-hand-lizard"></i>';
+    } else if (computer === "spock") {
+        div.innerHTML = '<i class="fa-solid fa-hand-spock"></i>';
     };
 
     document.getElementById("column3").appendChild(div);
@@ -190,6 +260,10 @@ function appendUserSelection(user) {
         div.innerHTML = '<i class="fa-regular fa-hand-back-fist"></i>';
     } else if (user === "scissors") {
         div.innerHTML = '<i class="fa-regular fa-hand-scissors"></i>';
+    } else if (computer === "lizard") {
+        div.innerHTML = '<i class="fa-solid fa-hand-lizard"></i>';
+    } else if (computer === "spock") {
+        div.innerHTML = '<i class="fa-solid fa-hand-spock"></i>';
     };
 
     document.getElementById("column1").appendChild(div);
