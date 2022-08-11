@@ -31,20 +31,20 @@ function runGame() {
             console.log("Tie");
             appendSelection(computer);
             tie();
-        } else if (user === "rock") {
-            rockArray(computer);
-        } else if (user === "paper") {
-            paperArray(computer);
-        } else if (user === "scissors") {
-            scissorsArray(computer);
-        } else if (user === "lizard") {
-            lizardArray(computer);
-        } else {
-            spockArray(computer);
-        }
+            } else if (user === "rock") {
+                rockArray(computer);
+            } else if (user === "paper") {
+                paperArray(computer);
+            } else if (user === "scissors") {
+                scissorsArray(computer);
+            } else if (user === "lizard") {
+                lizardArray(computer);
+            } else {
+             spockArray(computer);
+            }
         })
-        }
     }
+}
 
 function rockArray(computer) {
     console.log(computer);
@@ -130,11 +130,20 @@ function lizardArray(computer) {
  * The computer guess
  */
 function randomChoice() {
+    let checkGame = document.getElementById('checkGame');
 
-    const computerChoice = Math.floor(Math.random() * 5);
-    const computerSelection = variables[computerChoice];
-    return computerSelection;
-}
+    if (checkGame.innerHTML === 'Easy') {
+        console.log('Easy Game');
+        const computerChoice = Math.floor(Math.random() * 3);
+        const computerSelection = variables[computerChoice];
+        return computerSelection;
+        } else {
+        console.log('Hard Game');
+        const computerChoice = Math.floor(Math.random() * 5);
+        const computerSelection = variables[computerChoice];
+        return computerSelection;
+        }
+    }
 
 function incrementScore() {
 
@@ -260,9 +269,9 @@ function appendUserSelection(user) {
         div.innerHTML = '<i class="fa-regular fa-hand-back-fist"></i>';
     } else if (user === "scissors") {
         div.innerHTML = '<i class="fa-regular fa-hand-scissors"></i>';
-    } else if (computer === "lizard") {
+    } else if (user === "lizard") {
         div.innerHTML = '<i class="fa-solid fa-hand-lizard"></i>';
-    } else if (computer === "spock") {
+    } else if (user === "spock") {
         div.innerHTML = '<i class="fa-solid fa-hand-spock"></i>';
     };
 
