@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 );
 
-
+// Scrolls the page down along with each selection but limits to 300px to keep the game selection options within screen
 function oneClick() {
     if (window.pageYOffset >= 300) {
         return;
@@ -14,17 +14,18 @@ function oneClick() {
         window.scrollBy(0, 100);
     };
 }
-        
+
+// Main game run function
 function runGame() {
     let buttons = document.getElementsByTagName("button");
 
     for(let button of buttons) {
         button.addEventListener("click", function() {
         let user = this.getAttribute("data-type");
-        console.log(user);
+        console.log('User selects ' + user);
         appendUserSelection(user);
         let computer = randomChoice();
-        console.log(computer);
+        console.log('Computer selects ' + computer);
         oneClick();
         
         if (user === computer) {
@@ -47,7 +48,7 @@ function runGame() {
 }
 
 function rockArray(computer) {
-    console.log(computer);
+
     appendSelection(computer);
 
     if (computer === "paper") {
@@ -63,7 +64,7 @@ function rockArray(computer) {
 }
 
 function paperArray(computer) {
-    console.log(computer);
+    
     appendSelection(computer);
 
     if (computer === "scissors") {
@@ -79,7 +80,7 @@ function paperArray(computer) {
 }
 
 function scissorsArray(computer) {
-    console.log(computer);
+
     appendSelection(computer);
 
     if (computer === "rock") {
@@ -95,7 +96,7 @@ function scissorsArray(computer) {
 }
  
 function spockArray(computer) {
-    console.log(computer);
+
     appendSelection(computer);
 
     if (computer === "paper") {
@@ -111,13 +112,13 @@ function spockArray(computer) {
 }
 
 function lizardArray(computer) {
-    console.log(computer);
+
     appendSelection(computer);
 
-    if (computer === "paper") {
+    if (computer === "rock") {
         (console.log("Computer Wins"));
         incrementWrongAnswer();
-     } else if (computer === "lizard") {
+     } else if (computer === "scissors") {
         (console.log("Computer Wins"));
         incrementWrongAnswer();
      } else {
@@ -126,25 +127,26 @@ function lizardArray(computer) {
     };
 }
 
-/**
- * The computer guess
- */
+// The computer random guess
+
 function randomChoice() {
     let checkGame = document.getElementById('checkGame');
-
+/* Checks whether game selection is Easy or Hard for computer selection */
     if (checkGame.innerHTML === 'Easy') {
-        console.log('Easy Game');
+        console.log('Easy gameplay');
         const computerChoice = Math.floor(Math.random() * 3);
         const computerSelection = variables[computerChoice];
         return computerSelection;
         } else {
-        console.log('Hard Game');
+        console.log('Hard gameplay');
         const computerChoice = Math.floor(Math.random() * 5);
         const computerSelection = variables[computerChoice];
         return computerSelection;
         }
     }
 
+// If user wins, increases score by 1.
+// Checks if the score reaches 5 before it declares the champion
 function incrementScore() {
 
     const prevScore = parseInt(document.getElementById("games-won").innerText);
@@ -167,6 +169,8 @@ function incrementScore() {
     };
 }
 
+// If computer wins, increases score by 1.
+// Checks if the score reaches 5 before it declares the champion
 function incrementWrongAnswer() {
 
     const prevScore = parseInt(document.getElementById("games-lost").innerText);
@@ -190,6 +194,8 @@ function incrementWrongAnswer() {
 
 }
 
+// Tie event function
+
 function tie() {
     let div = document.createElement('div');
     div.innerText = 'Tie!';
@@ -203,6 +209,8 @@ function tie() {
     computerTie.classList.add("tie", "selection");
 }
 
+// Resets the game area match results in order to declare  the User champion with a picture of a cup
+// Time delay for 3s before resetting the scores for a new game
 function userChampion() {
 
     removeElementsByClass();
@@ -215,6 +223,8 @@ function userChampion() {
     setTimeout(resetScore, 3000);
 }
 
+// Resets the game area match results in order to declare  the Computer champion with a picture of a cup
+// Time delay for 3s before calling resetScore function
 function computerChampion() {
 
     removeElementsByClass();
@@ -227,6 +237,7 @@ function computerChampion() {
     setTimeout(resetScore, 3000);
 }
 
+// Resets score board to 0-0 for new game
 function resetScore() {
 
     document.getElementById("games-lost").innerText = 0;
@@ -237,6 +248,7 @@ function resetScore() {
 
 }
 
+// Removes the individual user and computer selections for each game from gameplay area
 function removeElementsByClass() {
     let elements = document.getElementsByClassName("selection");
     while(elements.length > 0){
@@ -244,6 +256,7 @@ function removeElementsByClass() {
     }
 }
 
+// Adds the computer selection to the gameplay area
 function appendSelection(computer) {
     let div = document.createElement('div');
     if (computer === "paper") {
@@ -261,6 +274,7 @@ function appendSelection(computer) {
     document.getElementById("column3").appendChild(div);
 }
 
+// Adds user selection to the gameplay area
 function appendUserSelection(user) {
     let div = document.createElement('div');
     if (user === "paper") {
