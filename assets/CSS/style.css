@@ -17,7 +17,7 @@ body {
 }
 
 .game-area {
-    height: 130px;
+    height: 150px;
 }
 
 .btn {
@@ -30,7 +30,7 @@ body {
     width: 130px;
 }
 
-.btn:hover { 
+.btn:hover {
     background-color: yellow;
     color: red;
     transform: scale(1.1);
@@ -73,7 +73,7 @@ a:hover {
     font-size: 2rem;
 }
 
-.results-column { 
+.results-column {
     width: 33%;
     float: left;
     text-align: center;
@@ -96,7 +96,8 @@ a:hover {
     ;
 }
 
-div.userLoss, div.computerLoss {
+div.userLoss,
+div.computerLoss {
     opacity: 0.5;
     font-size: 4rem;
 }
@@ -109,10 +110,18 @@ div.userLoss, div.computerLoss {
 
 }
 
-@keyframes winner{
-    0% {transform: scale(1);}
-    50% {transform: scale(1.5);}
-    100% {transform: scale(1);}
+@keyframes winner {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .userWin {
@@ -122,10 +131,18 @@ div.userLoss, div.computerLoss {
     font-size: 4rem;
 }
 
-@keyframes winner{
-    0% {transform: scale(1);}
-    50% {transform: scale(1.5);}
-    100% {transform: scale(1);}
+@keyframes winner {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 div.loser {
@@ -135,11 +152,19 @@ div.loser {
     opacity: 0.5;
 }
 
-@keyframes loser{
-    0% {transform: scale(1);}
-    50% {transform: scale(1.5);}
-    100% {transform: scale(1);}
-    
+@keyframes loser {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
 }
 
 .tie {
@@ -147,25 +172,41 @@ div.loser {
     animation-duration: 2s;
     font-size: 3rem;
 }
-    
-@keyframes tie{
-        0% {transform: scale(1);}
-        50% {transform: scale(1.5);}
-        100% {transform: scale(1);}
+
+@keyframes tie {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 div.champion {
     padding-top: 50px;
     color: red;
-    font-size: 16rem;
+    font-size: 10rem;
     animation-name: champion;
     animation-duration: 2s;
 }
 
-@keyframes champion{
-    0% {transform: scale(1);}
-    50% {transform: scale(1.5);}
-    100% {transform: scale(1);}
+@keyframes champion {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 @media screen and (max-width: 950px) {
@@ -177,25 +218,67 @@ div.champion {
         font-size: 40px;
         height: 65px;
         width: 65px;
-        }
     }
-    
-    @media screen and (max-width: 520px) {
+
+    .game-area {
+        height:90px
+    }
+
+    div.champion {
+        font-size: 6rem;
+    }
+}
+
+@media screen and (max-width: 520px) {
     h2 {
         font-size: 1.5rem;
         letter-spacing: 1px;
-        }
-    
+    }
+
     .gameChoice {
         font-size: 1.5rem;
         height: 80px;
-        }
-    
+    }
+
     .selection {
         font-size: 2.5rem;
-        }
-    
-    div.userLoss, div.computerLoss, div.loser {
-        font-size: 2.5rem;
-        }
     }
+
+    div.userLoss,
+    div.computerLoss,
+    div.loser {
+        font-size: 2.5rem;
+    }
+
+    div.champion {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .logo {
+        height: 200px;
+    }
+    
+    .heading {
+        font-size: 3rem;
+    }
+    
+    .btn {
+        padding: 10px;
+        border-radius: 15px;
+        margin: 0 10px;
+        transition-duration: .5s;
+        font-size: 20px;
+        height: 45px;
+        width: 45px;
+    }
+
+    .game-area {
+        height: 60px;
+    }
+
+    div.champion {
+        font-size: 4rem;
+    }
+}
