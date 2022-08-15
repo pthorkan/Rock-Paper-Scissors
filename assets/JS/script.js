@@ -1,10 +1,9 @@
 const variables = ["rock", "paper", "scissors", "lizard", "spock"];
 
 // Waits for DOM to finish loading before running the game
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     runGame();
-    }
-);
+});
 
 // Scrolls the page down along with each selection but limits to 300px to keep the game selection options within screen
 function oneClick() {
@@ -19,19 +18,19 @@ function oneClick() {
 function runGame() {
     let buttons = document.getElementsByTagName("button");
 
-    for(let button of buttons) {
-        button.addEventListener("click", function() {
-        let user = this.getAttribute("data-type");
-        console.log('User selects ' + user);
-        appendUserSelection(user);
-        let computer = randomChoice();
-        console.log('Computer selects ' + computer);
-        oneClick();
-        
-        if (user === computer) {
-            console.log("Tie");
-            appendSelection(computer);
-            tie();
+    for (let button of buttons) {
+        button.addEventListener("click", function () {
+            let user = this.getAttribute("data-type");
+            console.log('User selects ' + user);
+            appendUserSelection(user);
+            let computer = randomChoice();
+            console.log('Computer selects ' + computer);
+            oneClick();
+
+            if (user === computer) {
+                console.log("Tie");
+                appendSelection(computer);
+                tie();
             } else if (user === "rock") {
                 rockArray(computer);
             } else if (user === "paper") {
@@ -41,12 +40,15 @@ function runGame() {
             } else if (user === "lizard") {
                 lizardArray(computer);
             } else {
-             spockArray(computer);
+                spockArray(computer);
             }
         })
     }
 }
-
+/**
+ * 
+ * @param {string} computer 
+ */
 function rockArray(computer) {
 
     appendSelection(computer);
@@ -54,28 +56,28 @@ function rockArray(computer) {
     if (computer === "paper") {
         (console.log("Computer Wins"));
         incrementWrongAnswer();
-     } else if (computer === "spock") {
+    } else if (computer === "spock") {
         (console.log("Computer Wins"));
         incrementWrongAnswer();
-     } else {
+    } else {
         (console.log("User Wins"));
-        incrementScore(); 
+        incrementScore();
     };
 }
 
 function paperArray(computer) {
-    
+
     appendSelection(computer);
 
     if (computer === "scissors") {
         (console.log("Computer Wins"));
         incrementWrongAnswer();
-     } else if (computer === "lizard") {
+    } else if (computer === "lizard") {
         (console.log("Computer Wins"));
         incrementWrongAnswer();
-     } else {
+    } else {
         (console.log("User Wins"));
-        incrementScore(); 
+        incrementScore();
     };
 }
 
@@ -86,15 +88,15 @@ function scissorsArray(computer) {
     if (computer === "rock") {
         (console.log("Computer Wins"));
         incrementWrongAnswer();
-     } else if (computer === "spock") {
+    } else if (computer === "spock") {
         (console.log("Computer Wins"));
         incrementWrongAnswer();
-     } else {
+    } else {
         (console.log("User Wins"));
-        incrementScore(); 
+        incrementScore();
     };
 }
- 
+
 function spockArray(computer) {
 
     appendSelection(computer);
@@ -102,12 +104,12 @@ function spockArray(computer) {
     if (computer === "paper") {
         (console.log("Computer Wins"));
         incrementWrongAnswer();
-     } else if (computer === "lizard") {
+    } else if (computer === "lizard") {
         (console.log("Computer Wins"));
         incrementWrongAnswer();
-     } else {
+    } else {
         (console.log("User Wins"));
-        incrementScore(); 
+        incrementScore();
     };
 }
 
@@ -118,12 +120,12 @@ function lizardArray(computer) {
     if (computer === "rock") {
         (console.log("Computer Wins"));
         incrementWrongAnswer();
-     } else if (computer === "scissors") {
+    } else if (computer === "scissors") {
         (console.log("Computer Wins"));
         incrementWrongAnswer();
-     } else {
+    } else {
         (console.log("User Wins"));
-        incrementScore(); 
+        incrementScore();
     };
 }
 
@@ -131,19 +133,19 @@ function lizardArray(computer) {
 
 function randomChoice() {
     let checkGame = document.getElementById('checkGame');
-/* Checks whether game selection is Easy or Hard for computer selection */
+    /* Checks whether game selection is Easy or Hard for computer selection */
     if (checkGame.innerHTML === 'Easy') {
         console.log('Easy gameplay');
         const computerChoice = Math.floor(Math.random() * 3);
         const computerSelection = variables[computerChoice];
         return computerSelection;
-        } else {
+    } else {
         console.log('Hard gameplay');
         const computerChoice = Math.floor(Math.random() * 5);
         const computerSelection = variables[computerChoice];
         return computerSelection;
-        }
     }
+}
 
 // If user wins, increases score by 1.
 // Checks if the score reaches 5 before it declares the champion
@@ -187,7 +189,7 @@ function incrementWrongAnswer() {
     div.innerText = 'Damnnnn!';
     div.classList.add("loser", "selection");
     document.getElementById("column2").appendChild(div);
-    
+
     if (newScore === 5) {
         computerChampion();
     }
@@ -242,7 +244,7 @@ function resetScore() {
 
     document.getElementById("games-lost").innerText = 0;
     document.getElementById("games-won").innerText = 0;
-    
+
     let elements = document.getElementsByClassName("champion");
     elements[0].parentNode.removeChild(elements[0]);
 
@@ -251,7 +253,7 @@ function resetScore() {
 // Removes the individual user and computer selections for each game from gameplay area
 function removeElementsByClass() {
     let elements = document.getElementsByClassName("selection");
-    while(elements.length > 0){
+    while (elements.length > 0) {
         elements[0].parentNode.removeChild(elements[0]);
     }
 }
@@ -290,4 +292,4 @@ function appendUserSelection(user) {
     };
 
     document.getElementById("column1").appendChild(div);
-    };
+};
