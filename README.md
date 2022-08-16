@@ -8,7 +8,9 @@ The Easy game has Rock Paper Scissors options.
 
 The Hard game introduces two additonal options, to create Rock Paper Scissors Lizard Spock.
 
-![image]()
+<img src="/workspace/Rock-Paper-Scissors/assets/Images/Am_I_responsive_easy.jpg" width="400">
+<img src="/workspace/Rock-Paper-Scissors/assets/Images/Am_I_responsive.jpg" width="400">
+
 
 # Features
 ## Easy Game
@@ -82,11 +84,11 @@ The Hard game introduces two additonal options, to create Rock Paper Scissors Li
 
 # Deployment
 * The site was deployed to Github Pages. The steps to depoly were as follows:
-    * From the Github repository Rocky-Rovers-FC, navigate to settings tab.
+    * From the Github repository Rock Paper Scissors, navigate to settings tab.
     * Next, on the left hand side menu under 'Code and automation' find and click the 'pages' tab.
     * Change the branch to Main and click Save in order for website to be deployed. Wait a few minutes and refresh for the green published status. 
 
-Link to website - 
+Link to website - https://pthorkan.github.io/Rock-Paper-Scissors/
 
 # Credit
 

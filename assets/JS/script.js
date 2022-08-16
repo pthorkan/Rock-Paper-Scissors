@@ -186,7 +186,7 @@ function incrementWrongAnswer() {
     loser.classList.add("userLoss", "selection");
 
     let div = document.createElement('div');
-    div.innerText = 'Damnnnn!';
+    div.innerText = 'Lose!';
     div.classList.add("loser", "selection");
     document.getElementById("column2").appendChild(div);
 

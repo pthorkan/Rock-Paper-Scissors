@@ -259,15 +259,27 @@ div.champion {
     .logo {
         height: 200px;
     }
+
+    h2 {
+        font-size: 1.25rem;
+    }
     
     .heading {
         font-size: 3rem;
+    }
+
+    .gameChoice {
+        font-size: 1.25rem;
+    }
+
+    .columnHead {
+        font-size: 1.25rem;
     }
     
     .btn {
         padding: 10px;
         border-radius: 15px;
-        margin: 0 10px;
+        margin: 0 5px;
         transition-duration: .5s;
         font-size: 20px;
         height: 45px;
