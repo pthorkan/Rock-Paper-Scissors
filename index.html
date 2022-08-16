@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/760d0e5837.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="assets/CSS/style.css">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
 </head>
 <body id="easy-game">
     <img class="logo" src="assets/Images/rock-paper-scissors.png" alt="Rock Paper Scissors Game Logo">
@@ -20,33 +20,33 @@
 
     <div class="game-area">
         <div class="hand-options">
-            <button data-type="rock" class="btn">
+            <button data-type="rock" class="btn" aria-label="Rock">
                 <i class="fa-regular fa-hand-back-fist"></i>
             </button>
-            <button data-type="paper" class="btn">
+            <button data-type="paper" class="btn" aria-label="Paper">
                 <i class="fa-regular fa-hand"></i>
             </button>
-            <button data-type="scissors" class="btn">
+            <button data-type="scissors" class="btn" aria-label="Scissors">
                 <i class="fa-regular fa-hand-scissors"></i>
             </button>
         </div>
     </div>
 
     <div>
-        <span class="gameChoice">
+        <div class="gameChoice">
             <a id="checkGame" href="index.html" class="active" aria-label="Easy Game-play">Easy</a>
-        </span>
-        <span class="gameChoice">
+        </div>
+        <div class="gameChoice">
             <h2>First to 5 wins!!</h2>
-        </span>
-        <span class="gameChoice">
+        </div>
+        <div class="gameChoice">
             <a id="hard" href="hard.html" aria-label="Hard Game-play">Hard</a>
-        </span>
+        </div>
     </div>
     <div>
-        <span id="columnHead">Player<span id= "games-won" class="games-won">0</span></span>
-        <span id="columnHead">Vs</span>
-        <span id="columnHead">Computer<span id = "games-lost" class="games-lost">0</span></span>
+        <span class="columnHead">Player<span id= "games-won" class="games-won">0</span></span>
+        <span class="columnHead">Vs</span>
+        <span class="columnHead">Computer<span id = "games-lost" class="games-lost">0</span></span>
     </div>
     <div>
         <span id="column1" class="results-column"></span>
@@ -57,4 +57,8 @@
 
     <script src="assets/JS/script.js"></script>
 </body>
+<br>
+<footer>
+    <p>This cover has been designed using resources from Flaticon.com - https://www.flaticon.com/free-icons/rock-paper-scissors.</p>
+</footer>
 </html>

@@ -66,7 +66,7 @@ a:hover {
     height: 80px;
 }
 
-#columnHead {
+.columnHead {
     width: 33%;
     float: left;
     text-align: center;
@@ -85,7 +85,7 @@ a:hover {
 }
 
 .column1 {
-    text: center;
+    text-align: center;
     font-size: 2rem;
 }
 
@@ -281,4 +281,19 @@ div.champion {
     div.champion {
         font-size: 4rem;
     }
+}
+
+footer {
+    font-style: italic;
+    font-family: serif;
+    font-size: xx-small;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: auto;
+}
+
+.center {
+    display: block;
+    text-align: center;
 }
