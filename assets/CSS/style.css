@@ -295,13 +295,3 @@ div.champion {
     }
 }
 
-footer {
-    font-style: italic;
-    font-family: serif;
-    font-size: xx-small;
-    bottom: 0;
-    position: fixed;
-    width: 100%;
-    height: auto;
-}
-

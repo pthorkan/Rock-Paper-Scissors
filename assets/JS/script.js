@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const variables = ["rock", "paper", "scissors", "lizard", "spock"];
 
 // Waits for DOM to finish loading before running the game
@@ -11,7 +12,7 @@ function oneClick() {
         return;
     } else {
         window.scrollBy(0, 100);
-    };
+    }
 }
 
 // Main game run function
@@ -42,7 +43,7 @@ function runGame() {
             } else {
                 spockArray(computer);
             }
-        })
+        });
     }
 }
 /**
@@ -62,7 +63,7 @@ function rockArray(computer) {
     } else {
         (console.log("User Wins"));
         incrementScore();
-    };
+    }
 }
 
 function paperArray(computer) {
@@ -78,7 +79,7 @@ function paperArray(computer) {
     } else {
         (console.log("User Wins"));
         incrementScore();
-    };
+    }
 }
 
 function scissorsArray(computer) {
@@ -94,7 +95,7 @@ function scissorsArray(computer) {
     } else {
         (console.log("User Wins"));
         incrementScore();
-    };
+    }
 }
 
 function spockArray(computer) {
@@ -110,7 +111,7 @@ function spockArray(computer) {
     } else {
         (console.log("User Wins"));
         incrementScore();
-    };
+    }
 }
 
 function lizardArray(computer) {
@@ -126,7 +127,7 @@ function lizardArray(computer) {
     } else {
         (console.log("User Wins"));
         incrementScore();
-    };
+    }
 }
 
 // The computer random guess
@@ -155,10 +156,10 @@ function incrementScore() {
     const newScore = prevScore + 1;
     document.getElementById("games-won").innerText = newScore;
 
-    let winner = document.getElementById("column1").lastChild
+    let winner = document.getElementById("column1").lastChild;
     winner.classList.add("userWin", "selection");
 
-    let loser = document.getElementById("column3").lastChild
+    let loser = document.getElementById("column3").lastChild;
     loser.classList.add("computerLoss", "selection");
 
     let div = document.createElement('div');
@@ -168,7 +169,7 @@ function incrementScore() {
 
     if (newScore === 5) {
         userChampion();
-    };
+    }
 }
 
 // If computer wins, increases score by 1.
@@ -179,10 +180,10 @@ function incrementWrongAnswer() {
     const newScore = prevScore + 1;
     document.getElementById("games-lost").innerText = newScore;
 
-    let winner = document.getElementById("column3").lastChild
+    let winner = document.getElementById("column3").lastChild;
     winner.classList.add("computerWin", "selection");
 
-    let loser = document.getElementById("column1").lastChild
+    let loser = document.getElementById("column1").lastChild;
     loser.classList.add("userLoss", "selection");
 
     let div = document.createElement('div');
@@ -204,10 +205,10 @@ function tie() {
     div.classList.add("tie", "selection");
     document.getElementById("column2").appendChild(div);
 
-    let userTie = document.getElementById("column1").lastChild
+    let userTie = document.getElementById("column1").lastChild;
     userTie.classList.add("tie", "selection");
 
-    let computerTie = document.getElementById("column3").lastChild
+    let computerTie = document.getElementById("column3").lastChild;
     computerTie.classList.add("tie", "selection");
 }
 
@@ -271,7 +272,7 @@ function appendSelection(computer) {
         div.innerHTML = '<i class="fa-solid fa-hand-lizard"></i>';
     } else if (computer === "spock") {
         div.innerHTML = '<i class="fa-solid fa-hand-spock"></i>';
-    };
+    }
 
     document.getElementById("column3").appendChild(div);
 }
@@ -289,7 +290,7 @@ function appendUserSelection(user) {
         div.innerHTML = '<i class="fa-solid fa-hand-lizard"></i>';
     } else if (user === "spock") {
         div.innerHTML = '<i class="fa-solid fa-hand-spock"></i>';
-    };
+    }
 
     document.getElementById("column1").appendChild(div);
-};
+}

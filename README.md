@@ -68,16 +68,25 @@ The Hard game introduces two additonal options, Lizard and Spock, to create Rock
     * Ran code through W3C code validator check and corrected all errors.
 * CSS 
     * Ran code though W3C CSS code validator and corrected all errors.
+* JavaScript
+    * Ran code though W3C JShint validator and corrected all errors, mainly missing semi-colons.
+    * Produced the following metrics:
+        * There are 19 functions in this file.
+        * Function with the largest signature take 1 arguments, while the median is 0.
+        * Largest function has 15 statements in it, while the median is 8.
+        * The most complex function has a cyclomatic complexity value of 6 while the median is 2.
+    * One warning was produced:
+        * Functions declared within loops referencing an outer scoped variable may lead to confusing semantics.       (appendUserSelection, randomChoice, oneClick, appendSelection, tie, rockArray, paperArray, scissorsArray, lizardArray, spockArray).
+        * Will take warning on board for future JavaScript functions.
 
 * Lighthouse
     * Ran the code through Lighthouse in google dev tools and added aria-labels to the button selections to increase accessibility as per the recommendations.
 
-* Easy game Lighthouse Score
+        * Easy game Lighthouse Score
 
 <img src="/workspace/Rock-Paper-Scissors/assets/Images/index Lighthouse.jpg" width="500">
 
-
-* Hard game Lighthouse Score
+    * Hard game Lighthouse Score
 
 <img src="/workspace/Rock-Paper-Scissors/assets/Images/hard game lighthouse.jpg" width="500">
 
@@ -98,5 +107,5 @@ Link to website - https://pthorkan.github.io/Rock-Paper-Scissors/
 
 
 ## Images
-* The game logo was taken from Freepik - Flaticon website. Credited in the footer of the webpage.
-ref="https://www.flaticon.com/free-icons/rock-paper-scissors"
+* The game logo was taken from Freepik - Flaticon website. Ref="https://www.flaticon.com/free-icons/rock-paper-scissors"
+* Game button icons were taken from Font Awesome website, from the free library.
