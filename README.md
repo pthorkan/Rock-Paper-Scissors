@@ -16,7 +16,7 @@ The Hard game introduces two additonal options, Lizard and Spock, to create Rock
 ## Logo and Heading
 * The head of the landing page is a creative graphic of Rock Paper Scissors, with the title clearly noted below the image in bold.
 
-<img src="/workspace/Rock-Paper-Scissors/assets/Images/Logo and Title.jpg">
+<img src="assets/Images/Logo and Title.jpg">
 
 ## Game Play Options
 * The game-play options are in big-button format. 
@@ -24,15 +24,15 @@ The Hard game introduces two additonal options, Lizard and Spock, to create Rock
 * The Hard Game has five options of Rock Paper Scissors Lizard Spock.
 * Each option magnifies and highlights on hover, for increased interactivity with the player.
 
-<img src="/workspace/Rock-Paper-Scissors/assets/Images/easy_game_options.jpg">
-<img src="/workspace/Rock-Paper-Scissors/assets/Images/hard_game_options.jpg">
+<img src="assets/Images/easy_game_options.jpg">
+<img src="assets/Images/hard_game_options.jpg">
 
 ## Game Difficulty Levels
 * Below the game-play buttons, you will find the game difficulty selection- 'Easy' and 'Hard'.
 * Current game selection will be underlined.
 * Basic game rule of 'First to 5 wins'.
 
-<img src="/workspace/Rock-Paper-Scissors/assets/Images/game_difficulty_options.jpg">
+<img src="assets/Images/game_difficulty_options.jpg">
 
 ## Game Score Area
 * The game scores are clearly split into left and right zones. 
@@ -40,13 +40,12 @@ The Hard game introduces two additonal options, Lizard and Spock, to create Rock
 * The Computer selection is then randomly generated, and pinned beneath the Computer score zone automatically. 
 * Both selections are assessed and the result is pinned to the centre zone. If there is a Player or Computer win, the respective score counter is increased. If it is a tie, both scores remain the same.
 
-<img src="/workspace/Rock-Paper-Scissors/assets/Images/Game Scores and results area.jpg">
-
+<img src="assets/Images/Game_scores_and_results_area.jpg">
 
 * Once the either score has reached 5, the champion will be crowned under the respective zone.
 
 
-<img src="/workspace/Rock-Paper-Scissors/assets/Images/champion.jpg">
+<img src="assets/Images/champion.jpg">
 
 ## Game Reset
 * After a pause of 3 secs, the score counters reset and the score area is cleared for a new game.
@@ -84,11 +83,11 @@ The Hard game introduces two additonal options, Lizard and Spock, to create Rock
 
         * Easy game Lighthouse Score
 
-<img src="/workspace/Rock-Paper-Scissors/assets/Images/index Lighthouse.jpg" width="500">
+<img src="assets/Images/index Lighthouse.jpg" width="500">
 
     * Hard game Lighthouse Score
 
-<img src="/workspace/Rock-Paper-Scissors/assets/Images/hard game lighthouse.jpg" width="500">
+<img src="assets/Images/hard game lighthouse.jpg" width="500">
 
 
 # Deployment
