@@ -8,8 +8,8 @@ The Easy game has Rock Paper Scissors options.
 
 The Hard game introduces two additonal options, Lizard and Spock, to create Rock Paper Scissors Lizard Spock.
 
-<img src="/workspace/Rock-Paper-Scissors/assets/Images/Am_I_responsive_easy.jpg" width="525">
-<img src="/workspace/Rock-Paper-Scissors/assets/Images/Am_I_responsive.jpg" width="525">
+<img src="assets/Images/Am_I_responsive_easy.jpg" width="525">
+<img src="assets/Images/Am_I_responsive.jpg" width="525">
 
 
 # Features
